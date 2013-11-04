@@ -1,0 +1,27 @@
+# Aliases
+alias pull='git pull'
+alias st='git status'
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias speedtest='wget -O /dev/null http://speedtest.wdc01.softlayer.com/downloads/test10.zip'
+
+# Shortcuts
+alias dt="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+alias g="git"
+alias v="vim"
+alias s="subl ."
+alias o="open"
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+        colorflag="--color"
+else # OS X `ls`
+        colorflag="-G"
+fi
+
+# List all files colorized in long format
+alias l="ls -lF ${colorflag}"
+
+# Enable aliases to be sudo’ed
+alias sudo='sudo '
