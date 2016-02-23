@@ -1,5 +1,3 @@
 # Dotfiles
 
-A very basic set of Dotfiles, largely borrowed from [Simon Owen](https://github.com/simonowendesign/dotfiles).
-
-Private SSH aliases are stored outside of the repo (for obvious reasons).
+A repository of my current dotfiles. Symlinks can be created with `bash link.sh`.

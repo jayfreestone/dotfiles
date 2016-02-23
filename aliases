@@ -1,0 +1,11 @@
+# Server-based Aliases
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+
+# Shortcuts
+alias si="cd ~/Sites"
+alias dash="cd ~/Sites/Overture_Dashboard"
+alias o="open"
+
+# Re-mappings
+alias vim="nvim"
