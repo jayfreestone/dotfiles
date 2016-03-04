@@ -4,7 +4,7 @@ export CLICOLOR=1
 set -o vi
 
 # Shorten prompt
-export PS1="$ "
+export PS1="\W $ "
 
 # Ensure MAMP PHP is in path
 export MAMP_PHP=/Applications/MAMP/bin/php/php5.6.10/bin
