@@ -17,11 +17,15 @@
     ],
     "rules": {
         "strict": [2, "global"],
+		"indent": [2, "tab"],
         "no-multi-spaces": 0,
         "no-use-before-define": 0,
         "no-console": 0,
         "padded-blocks": 0,
         "no-else-return": 0,
-		"no-var": 2
+		"no-var": 2,
+		"func-names": 0,
+		"no-unused-vars": 0,
+		"max-len": 0
     }
 }
