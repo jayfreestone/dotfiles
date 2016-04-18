@@ -6,6 +6,3 @@ alias upgrade='sudo apt-get upgrade'
 alias si="cd ~/Sites"
 alias dash="cd ~/Sites/Overture_Dashboard"
 alias o="open"
-
-# Re-mappings
-alias vim="nvim"
