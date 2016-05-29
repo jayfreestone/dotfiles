@@ -2,6 +2,7 @@
 --exclude=dist
 --exclude=*.min.js
 --exclude=*.min.css
+--exclude=*.css
 --exclude=*.map
 --exclude=.backup
 --exclude=.sass-cache
