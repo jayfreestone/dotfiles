@@ -8,6 +8,8 @@
 --exclude=.sass-cache
 --exclude=vendors
 --exclude=.git
+--exclude=wp-admin
+--exclude=wp-includes
 
 --langdef=scss
 --langmap=scss:.sass
