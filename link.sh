@@ -7,7 +7,7 @@
 # Variables
 
 dir=~/dotfiles # dotfiles directory
-files="bash_profile agignore eslintrc gitignore scss-lint.yml ctags tern-project" # files to symlink
+files="bash_profile agignore eslintrc gitignore scss-lint.yml ctags tern-project hyper.js" # files to symlink
 
 # Symlink Creation
 
