@@ -1,6 +1,6 @@
 module.exports = {
   config: {
-    theme: 'hyperterm-deep-space',
+    theme: 'hyperterm-snazzy',
 
     // default font size in pixels for all tabs
     fontSize: 13,
@@ -60,8 +60,9 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
   	'hyperblue',
-  	'hyperterm-deep-space',
+  	'hyper-snazzy',
   	'hyperterm-tab-icons',
+    'hypercwd'
   ],
 
   // in development, you can create a directory under
