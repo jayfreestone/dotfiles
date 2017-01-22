@@ -7,7 +7,7 @@
 # Variables
 
 dir=~/dotfiles # dotfiles directory
-files="tmux.conf bash_profile agignore eslintrc gitignore scss-lint.yml ctags tern-project hyper.js" # files to symlink
+files="hushlogin tmux.conf bash_profile agignore eslintrc gitignore scss-lint.yml ctags tern-project hyper.js" # files to symlink
 
 # Symlink Creation
 

@@ -24,3 +24,4 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 # Includes
 source ~/dotfiles/aliases
 source ~/dotfiles/functions
+source ~/.bashrc
