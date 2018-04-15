@@ -31,7 +31,7 @@ export NVM_DIR="$HOME/.nvm"
 bindkey -v
 
 # Aliases
-alias ls='ls -lah'
+alias ls='ls -Glah'
 alias mkdir='mkdir -pv'
 # Override zsh git plugin with fzf helper (faster)
 alias gco='fbr'
