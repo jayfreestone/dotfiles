@@ -1,5 +1,0 @@
-db_backups/
-node_modules/
-wordpress/
-wp-content/plugins/*
-wp-content/themes/wrb/node_modules/
