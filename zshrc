@@ -11,10 +11,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 antigen bundle z
-# antigen bundle git
-antigen bundle atweiden/fzf-extras
 antigen bundle gitfast
 antigen bundle Seinh/git-prune
+antigen bundle atweiden/fzf-extras
 antigen bundle qianxinfeng/zsh-vscode
 antigen bundle zsh-users/zsh-syntax-highlighting
 
