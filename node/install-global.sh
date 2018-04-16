@@ -2,6 +2,7 @@
 
 # Packages we want installed globally
 npm install -g \
+    trash-cli \
     commitizen \
     cz-conventional-changelog \
     typescript \

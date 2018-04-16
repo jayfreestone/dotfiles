@@ -37,6 +37,8 @@ alias mkdir='mkdir -pv'
 alias gco='fbr'
 # Prefer commitizen
 alias gc='git cz'
+# Prefer non-permanent delete
+alias rm='trash'
 
 ## Dirs
 alias app='cd /var/application'
