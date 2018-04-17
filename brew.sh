@@ -9,6 +9,7 @@ brew update
 brew upgrade
 
 # Install more recent versions of some macOS tools.
+brew install git
 brew install vim --with-override-system-vi --with-lua --with-python@2
 
 # Install other useful binaries.
