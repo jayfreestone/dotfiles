@@ -44,6 +44,47 @@ alias gco='fbr'
 # Prefer commitizen
 alias gc='git cz'
 
+# JIRA plugin
+# browse etc is annoyingly autocorrected
+alias j='nocorrect jira'
+# JIRA browse with project prefix
+alias jsp='jira sprint'
+
+# Jira list
+jl() {
+  local projectName
+  projectName=($(jira print-project))
+  jira list | fzf | sed 's/:.*//'
+}
+
+# Jira browse
+jb() {
+  local projectName
+  projectName=($(jira print-project))
+
+  # If issue num is provided, skip search
+  if [ "$#" == 1 ]
+  then
+    jira browse "$projectName"-"$1"
+  else
+    jira browse $(jl)
+  fi
+}
+
+# Jira view
+jv() {
+  local projectName
+  projectName=($(jira print-project))
+
+  # If issue num is provided, skip search
+  if [ "$#" == 1 ]
+  then
+    jira view "$projectName"-"$1"
+  else
+    jira view $(jl)
+  fi
+}
+
 ## Dirs
 alias app='cd /var/application'
 alias gsi='cd /var/application/GSI'
