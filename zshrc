@@ -1,10 +1,14 @@
 source /usr/local/share/antigen/antigen.zsh
 
-# Required for z to work
-source `brew --prefix`/etc/profile.d/z.sh
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
+
+# compsys initialization
+# autoload -U compinit
+# compinit
+
+# Required for z to work
+source `brew --prefix`/etc/profile.d/z.sh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     antigen bundle osx
@@ -22,6 +26,12 @@ antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
+
+# Add custom completion
+# fpath=(~/.zsh/completion $fpath)
+
+# show completion menu when number of options is at least 2
+# zstyle ':completion:*' menu select=2
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -57,6 +67,13 @@ jl() {
   jira list | fzf | sed 's/:.*//'
 }
 
+jiraTaskCompletion() {
+  local query task
+  task=$(jira list | fzf --query "$1") &&
+  reply=("$(echo "$task" | cut -d: -f1)")
+  # reply=($(echo "$task" | sed 's/:.*//'))
+}
+
 # Jira browse
 jb() {
   local projectName
@@ -70,6 +87,8 @@ jb() {
     jira browse $(jl)
   fi
 }
+
+compctl -K jiraTaskCompletion jb
 
 # Jira view
 jv() {
@@ -85,6 +104,8 @@ jv() {
   fi
 }
 
+compctl -K jiraTaskCompletion jv
+
 ## Dirs
 alias app='cd /var/application'
 alias gsi='cd /var/application/GSI'
@@ -94,7 +115,7 @@ alias gsi='cd /var/application/GSI'
 
 if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_OPTS=--inline-info
-  export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{.git,node_modules}/*"'
   source ~/.fzf.zsh
   # Re-bind to match most modern editors
   bindkey '\C-p' fzf-file-widget
