@@ -3,10 +3,6 @@ source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# compsys initialization
-# autoload -U compinit
-# compinit
-
 # Required for z to work
 source `brew --prefix`/etc/profile.d/z.sh
 
@@ -26,12 +22,6 @@ antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
-
-# Add custom completion
-# fpath=(~/.zsh/completion $fpath)
-
-# show completion menu when number of options is at least 2
-# zstyle ':completion:*' menu select=2
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -60,18 +50,11 @@ alias j='nocorrect jira'
 # JIRA browse with project prefix
 alias jsp='jira sprint'
 
-# Jira list
+# Jira list, returns the ticket ID
 jl() {
   local projectName
   projectName=($(jira print-project))
   jira list | fzf | sed 's/:.*//'
-}
-
-jiraTaskCompletion() {
-  local query task
-  task=$(jira list | fzf --query "$1") &&
-  reply=("$(echo "$task" | cut -d: -f1)")
-  # reply=($(echo "$task" | sed 's/:.*//'))
 }
 
 # Jira browse
@@ -88,8 +71,6 @@ jb() {
   fi
 }
 
-compctl -K jiraTaskCompletion jb
-
 # Jira view
 jv() {
   local projectName
@@ -103,8 +84,6 @@ jv() {
     jira view $(jl)
   fi
 }
-
-compctl -K jiraTaskCompletion jv
 
 ## Dirs
 alias app='cd /var/application'
