@@ -41,8 +41,18 @@ alias ls='ls -Glah'
 alias mkdir='mkdir -pv'
 # Override zsh git plugin with fzf helper (faster)
 alias gco='fbr'
+alias gmb='fbrm'
 # Prefer commitizen
 alias gc='git cz'
+
+# fbrm - find and merge branch
+fbrm() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
 
 # JIRA plugin
 # browse etc is annoyingly autocorrected
