@@ -46,6 +46,8 @@ alias gco='fbr'
 alias gmb='fbrm'
 ## Prefer commitizen
 alias gc='git cz'
+# Prefer non-permanent delete
+alias rm='trash'
 
 # fbrm - find and merge branch
 fbrm() {
