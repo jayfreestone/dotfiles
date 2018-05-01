@@ -39,10 +39,12 @@ bindkey -v
 # Aliases
 alias ls='ls -Glah'
 alias mkdir='mkdir -pv'
-# Override zsh git plugin with fzf helper (faster)
+## Tig
+alias tigme='tig --author="\(jay.freestone\)\|\(mail@jayfreestone.com\)"'
+## Override zsh git plugin with fzf helper (faster)
 alias gco='fbr'
 alias gmb='fbrm'
-# Prefer commitizen
+## Prefer commitizen
 alias gc='git cz'
 
 # fbrm - find and merge branch
