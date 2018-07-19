@@ -1,3 +1,5 @@
+#export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:$PATH
+
 source /usr/local/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -33,6 +35,9 @@ export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# composer
+export PATH=$PATH:$HOME/.composer/vendor/bin
+
 # Vi mode
 bindkey -v
 
@@ -42,20 +47,25 @@ alias mkdir='mkdir -pv'
 ## Tig
 alias tigme='tig --author="\(jay.freestone\)\|\(mail@jayfreestone.com\)"'
 ## Override zsh git plugin with fzf helper (faster)
-alias gco='fbr'
-alias gmb='fbrm'
+#alias gco='fbr'
+#alias gmb='fbrm'
 ## Prefer commitizen
 alias gc='git cz'
 # Prefer non-permanent delete
 alias rm='trash'
 
-# fbrm - find and merge branch
+# Find and merge branch
 fbrm() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# Reset changes on a specific file
+grf() {
+  git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git checkout
 }
 
 # JIRA plugin
@@ -113,5 +123,3 @@ if [ -f ~/.fzf.zsh ]; then
   # Re-bind to match most modern editors
   bindkey '\C-p' fzf-file-widget
 fi
-
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
