@@ -123,6 +123,8 @@ module.exports = {
     'hyper-snazzy',
     'hyperterm-paste',
     'hyper-search',
+    'hyper-tabs-enhanced',
+    'hypercwd'
   ],
 
   // in development, you can create a directory under
