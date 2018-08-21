@@ -1,5 +1,3 @@
-#export PATH=/usr/local/opt/python/libexec/bin:/usr/local/bin:/usr/local/sbin:$PATH
-
 source /usr/local/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -12,11 +10,10 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     antigen bundle osx
 fi
 
-antigen bundle z
+antigen bundle docker-compose
 antigen bundle gitfast
 antigen bundle Seinh/git-prune
 antigen bundle atweiden/fzf-extras
-antigen bundle qianxinfeng/zsh-vscode
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
@@ -44,24 +41,16 @@ bindkey -v
 # Aliases
 alias ls='ls -Glah'
 alias mkdir='mkdir -pv'
-## Tig
-alias tigme='tig --author="\(jay.freestone\)\|\(mail@jayfreestone.com\)"'
-## Override zsh git plugin with fzf helper (faster)
-#alias gco='fbr'
-#alias gmb='fbrm'
-## Prefer commitizen
+alias grd='cd $(git rev-parse --show-toplevel)'
+# Prefer commitizen
 alias gc='git cz'
 # Prefer non-permanent delete
 alias rm='trash'
-
-# Find and merge branch
-fbrm() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git merge $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
+## Dirs
+alias app='cd /var/application'
+## Docker
+alias dc='docker-compose'
+compdef dc='docker-compose'
 
 # Reset changes on a specific file
 grf() {
@@ -109,10 +98,6 @@ jv() {
   fi
 }
 
-## Dirs
-alias app='cd /var/application'
-alias gsi='cd /var/application/GSI'
-
 # fzf setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -122,4 +107,6 @@ if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
   # Re-bind to match most modern editors
   bindkey '\C-p' fzf-file-widget
+  # MacOS doesn't use Alt in terminal, so re-bind
+  bindkey '\C-o' fzf-cd-widget
 fi
