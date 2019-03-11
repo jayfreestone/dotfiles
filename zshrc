@@ -15,6 +15,7 @@ antigen bundle gitfast
 antigen bundle Seinh/git-prune
 antigen bundle atweiden/fzf-extras
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 
 # Load the theme.
 antigen theme robbyrussell
