@@ -49,8 +49,6 @@ alias mkdir='mkdir -pv'
 alias grd='cd $(git rev-parse --show-toplevel)'
 # Prefer commitizen
 alias gc='git cz'
-# Prefer non-permanent delete
-alias rm='trash'
 ## Dirs
 alias app='cd /var/application'
 ## Docker
