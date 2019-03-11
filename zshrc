@@ -34,6 +34,9 @@ export PATH=$PATH:$GOROOT/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
+# ruby (rvm)
+eval "$(rbenv init -)"
+
 # composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
 
