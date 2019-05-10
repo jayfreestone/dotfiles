@@ -123,7 +123,6 @@ module.exports = {
     'hyper-snazzy',
     'hyperterm-paste',
     'hyper-search',
-    'hyper-tabs-enhanced',
     'hypercwd'
   ],
 
