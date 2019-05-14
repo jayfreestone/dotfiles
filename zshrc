@@ -36,6 +36,18 @@ export PATH=$PATH:$GOROOT/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/mysql/bin:$PATH"
 
+# prefer nvim as $EDITOR
+if which nvim > /dev/null; then
+  export EDITOR=nvim
+  alias vi=nvim
+  alias vim=nvim
+else
+  export EDITOR=vim
+  alias nvim=vim
+fi
+export GIT_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+
 # ruby (rvm)
 eval "$(rbenv init -)"
 
