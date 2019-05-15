@@ -42,7 +42,9 @@ export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
 # ruby (rvm)
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # composer
 export PATH=$PATH:$HOME/.composer/vendor/bin
