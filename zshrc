@@ -69,47 +69,6 @@ grf() {
   git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git checkout
 }
 
-# JIRA plugin
-# browse etc is annoyingly autocorrected
-alias j='nocorrect jira'
-# JIRA browse with project prefix
-alias jsp='jira sprint'
-
-# Jira list, returns the ticket ID
-jl() {
-  local projectName
-  projectName=($(jira print-project))
-  jira list | fzf | sed 's/:.*//'
-}
-
-# Jira browse
-jb() {
-  local projectName
-  projectName=($(jira print-project))
-
-  # If issue num is provided, skip search
-  if [ "$#" == 1 ]
-  then
-    jira browse "$projectName"-"$1"
-  else
-    jira browse $(jl)
-  fi
-}
-
-# Jira view
-jv() {
-  local projectName
-  projectName=($(jira print-project))
-
-  # If issue num is provided, skip search
-  if [ "$#" == 1 ]
-  then
-    jira view "$projectName"-"$1"
-  else
-    jira view $(jl)
-  fi
-}
-
 # fzf setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
