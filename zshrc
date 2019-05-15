@@ -56,10 +56,6 @@ bindkey -v
 alias ls='ls -Glah'
 alias mkdir='mkdir -pv'
 alias grd='cd $(git rev-parse --show-toplevel)'
-# Prefer commitizen
-alias gc='git cz'
-## Dirs
-alias app='cd /var/application'
 ## Docker
 alias dc='docker-compose'
 compdef dc='docker-compose'
