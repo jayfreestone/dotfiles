@@ -17,6 +17,7 @@ antigen bundle Seinh/git-prune
 antigen bundle atweiden/fzf-extras
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-completions
 
 # Load the theme.
 antigen theme robbyrussell
