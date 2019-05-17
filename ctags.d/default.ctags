@@ -1,0 +1,10 @@
+--exclude=node_modules
+--exclude=dist
+--exclude=*.min.js
+--exclude=*.min.css
+--exclude=*.css
+--exclude=*.map
+--exclude=.backup
+--exclude=.sass-cache
+--exclude=vendors
+--exclude=.git
