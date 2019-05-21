@@ -1,0 +1,16 @@
+tap "universal-ctags/universal-ctags"
+
+brew "antigen"
+brew "zsh"
+brew "z"
+brew "bat"
+brew "vim"
+brew "neovim"
+brew "diff-so-fancy"
+brew "jansson"
+brew "kubernetes-cli"
+brew "rbenv"
+brew "fzf"
+brew "ripgrep"
+brew "mosh"
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
