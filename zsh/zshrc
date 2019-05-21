@@ -11,6 +11,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 antigen bundle git
+antigen bundle docker
 antigen bundle docker-compose
 antigen bundle gitfast
 antigen bundle Seinh/git-prune
