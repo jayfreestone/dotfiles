@@ -1,0 +1,2 @@
+zsh/conf.d/*
+!zsh/conf.d/.gitkeep

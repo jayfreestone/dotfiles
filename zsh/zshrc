@@ -3,11 +3,11 @@ source /usr/local/share/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
-# Required for z to work
-source `brew --prefix`/etc/profile.d/z.sh
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    antigen bundle osx
+  antigen bundle osx
+
+  # Required for z to work
+  source `brew --prefix`/etc/profile.d/z.sh
 fi
 
 antigen bundle git
@@ -24,6 +24,9 @@ antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
+
+autoload -U compinit compdef
+compinit
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
@@ -77,3 +80,8 @@ if [ -f ~/.fzf.zsh ]; then
   # MacOS doesn't use Alt in terminal, so re-bind
   bindkey '\C-o' fzf-cd-widget
 fi
+
+# Load in custom configs
+for file in ~/dotfiles/zsh/conf.d/*.zsh.inc; do
+  source "$file"
+done

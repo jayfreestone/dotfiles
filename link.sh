@@ -7,7 +7,7 @@
 # Variables
 
 dir=~/dotfiles # dotfiles directory
-files="gitignore_global ctags.d tern-project hushlogin zshrc czrc bash_profile chunkwmrc skhdrc rgignore" # files to symlink
+files="gitignore_global ctags.d tern-project hushlogin zsh/zshrc czrc bash_profile chunkwmrc skhdrc rgignore" # files to symlink
 
 # Symlink Creation
 
