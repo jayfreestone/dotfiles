@@ -1,3 +1,5 @@
+setopt null_glob
+
 source /usr/local/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
