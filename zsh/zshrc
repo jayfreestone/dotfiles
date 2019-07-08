@@ -53,7 +53,7 @@ if which rbenv > /dev/null; then
 fi
 
 # Vi mode
-bindkey -v
+bindkey -v '^?' backward-delete-char
 
 # Aliases
 alias ls='ls -Glah'
