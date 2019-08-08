@@ -75,6 +75,8 @@ grf() {
 if [ -f ~/.fzf.zsh ]; then
   export FZF_DEFAULT_OPTS=--inline-info
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!{.git,node_modules}/*"'
+  # To apply the command to CTRL-T as well
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
   source ~/.fzf.zsh
   # Re-bind to match most modern editors
   bindkey '\C-p' fzf-file-widget
