@@ -63,6 +63,11 @@ alias grd='cd $(git rev-parse --show-toplevel)'
 ## Docker
 alias dc='docker-compose'
 compdef dc='docker-compose'
+## Git
+### Stage files with fzf multi-select
+alias ga="git ls-files -m -o --exclude-standard | fzf --print0 -m --preview 'bat --style=numbers --color=always {}' | xargs -0 -t -o git add"
+### Diff files with fzf multi-select
+alias gd="git ls-files -m -o --exclude-standard | fzf --print0 -m --preview 'bat --style=numbers --color=always {}' | xargs -0 -t -o git diff"
 
 # Reset changes on a specific file
 grf() {
