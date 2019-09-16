@@ -89,6 +89,11 @@ if [ -f ~/.fzf.zsh ]; then
   bindkey '\C-o' fzf-cd-widget
 fi
 
+if which direnv > /dev/null; then
+  # Set up direnv
+  eval "$(direnv hook zsh)"
+fi
+
 # Load in custom configs
 for file in ~/dotfiles/zsh/conf.d/*.zsh.inc; do
   source "$file"
