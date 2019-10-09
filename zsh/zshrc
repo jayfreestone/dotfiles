@@ -48,6 +48,9 @@ fi
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
+# Set GUI editor
+export GUI_EDITOR="IntelliJ\ IDEA\ Ultimate"
+
 # ruby (rvm)
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
@@ -98,3 +101,5 @@ fi
 for file in ~/dotfiles/zsh/conf.d/*.zsh.inc; do
   source "$file"
 done
+
+alias idea="open -a $GUI_EDITOR"
