@@ -16,4 +16,7 @@ brew "fzf"
 brew "ripgrep"
 brew "watch"
 brew "mosh"
+brew "tmux"
+brew "direnv"
+brew "koekeishiya/formulae/skhd"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
