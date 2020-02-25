@@ -24,7 +24,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-completions
 
 # Load the theme.
-antigen theme robbyrussell
+antigen theme https://github.com/dracula/zsh
 
 # Tell Antigen that you're done.
 antigen apply
@@ -103,3 +103,4 @@ for file in ~/dotfiles/zsh/conf.d/*.zsh.inc; do
 done
 
 alias idea="open -a $GUI_EDITOR"
+
