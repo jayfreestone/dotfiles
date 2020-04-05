@@ -67,10 +67,23 @@ alias grd='cd $(git rev-parse --show-toplevel)'
 alias dc='docker-compose'
 compdef dc='docker-compose'
 ## Git
-### Stage files with fzf multi-select
-alias ga="git ls-files -m -o --exclude-standard | fzf --print0 -m --preview 'bat --style=numbers --color=always {}' | xargs -0 -t -o git add"
-### Diff files with fzf multi-select
-alias gd="git ls-files -m -o --exclude-standard | fzf --print0 -m --preview 'bat --style=numbers --color=always {}' | xargs -0 -t -o git diff"
+
+# fco - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# fcoc - checkout git commit
+fcoc() {
+  local commits commit
+  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
 
 # Reset changes on a specific file
 grf() {
