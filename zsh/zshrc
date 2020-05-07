@@ -32,10 +32,6 @@ antigen apply
 autoload -U compinit compdef
 compinit
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # prefer nvim as $EDITOR
 if which nvim > /dev/null; then
   export EDITOR=nvim
@@ -51,44 +47,8 @@ export VISUAL=$EDITOR
 # Set GUI editor
 export GUI_EDITOR="IntelliJ\ IDEA\ Ultimate"
 
-# ruby (rvm)
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # Vi mode
 bindkey -v '^?' backward-delete-char
-
-# Aliases
-alias ls='ls -Glah'
-alias mkdir='mkdir -pv'
-alias grd='cd $(git rev-parse --show-toplevel)'
-## Docker
-alias dc='docker-compose'
-compdef dc='docker-compose'
-## Git
-
-# fco - checkout git branch
-fbr() {
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
-# fcoc - checkout git commit
-fcoc() {
-  local commits commit
-  commits=$(git log --pretty=oneline --abbrev-commit --reverse) &&
-  commit=$(echo "$commits" | fzf --tac +s +m -e) &&
-  git checkout $(echo "$commit" | sed "s/ .*//")
-}
-
-# Reset changes on a specific file
-grf() {
-  git ls-files -m -o --exclude-standard | fzf -m --print0 | xargs -0 -o -t git checkout
-}
 
 # fzf setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -110,13 +70,22 @@ if which direnv > /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-zet() {
-  nvim "+Zet $*"
-}
+# node (nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-zet-tags() {
-  rg '(?:^| )(#\w([\w|-])*)' -o -I  ~/zettelkasten | sort | uniq
-}
+# ruby (rvm)
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
+
+# Load aliases
+source ~/dotfiles/zsh/aliases.inc.zsh;
+
+# Load custom executable functions
+for file in ~/dotfiles/zsh/functions/*.zsh.inc; do
+  source "$file"
+done
 
 # Load in custom configs
 for file in ~/dotfiles/zsh/conf.d/*.zsh.inc; do
