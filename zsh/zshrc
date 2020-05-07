@@ -79,6 +79,10 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
+# Enable docker completion for commands such as docker exec -it
+zstyle ':completion:*:*:docker:*' option-stacking yes
+zstyle ':completion:*:*:docker-*:*' option-stacking yes
+
 # Load aliases
 source ~/dotfiles/zsh/aliases.inc.zsh;
 
