@@ -18,13 +18,12 @@ antigen bundle docker
 antigen bundle docker-compose
 antigen bundle gitfast
 antigen bundle Seinh/git-prune
-antigen bundle atweiden/fzf-extras
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-completions
 
 # Load the theme.
-antigen theme https://github.com/dracula/zsh
+antigen theme robbyrussell
 
 # Tell Antigen that you're done.
 antigen apply
@@ -87,11 +86,12 @@ zstyle ':completion:*:*:docker-*:*' option-stacking yes
 source ~/dotfiles/zsh/aliases.inc.zsh;
 
 # Load custom executable functions
-for file in ~/dotfiles/zsh/functions/*.zsh.inc; do
+for file in ~/dotfiles/zsh/functions/*.inc.zsh; do
   source "$file"
 done
 
 # Load in custom configs
-for file in ~/dotfiles/zsh/conf.d/*.zsh.inc; do
+for file in ~/dotfiles/zsh/conf.d/*.inc.zsh; do
   source "$file"
 done
+
