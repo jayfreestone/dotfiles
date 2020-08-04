@@ -11,6 +11,8 @@
     autosquash = true
 [fetch]
     prune = true
+[pull]
+    ff = only
 [merge]
     ff = only
 [include]
