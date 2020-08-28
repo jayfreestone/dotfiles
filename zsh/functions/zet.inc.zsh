@@ -9,7 +9,7 @@ zet() {
   local title=$@
   # Lowercase it and replace spaces with dashes
   local slugified_title=$(echo ${title:l} | sed 's/ /-/g')
-  local note_name="$(date +"%Y%m%d%k%M")-$slugified_title"
+  local note_name="$(date +"%Y%m%d%H%M")-$slugified_title"
   local note_body="ID: $note_name\nTags:\n\n# $title"
   local note_location="$ZETTEL_DIR/$note_name.md"
 
