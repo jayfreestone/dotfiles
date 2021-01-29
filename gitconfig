@@ -16,5 +16,19 @@
     ff = only
 [merge]
     ff = only
+	tool = Kaleidoscope
 [include]
   path = ~/.gitconfig.local
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

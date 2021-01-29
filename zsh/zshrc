@@ -2,10 +2,6 @@ setopt null_glob
 
 source /usr/local/share/antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
-# antigen use oh-my-zsh
-eval "$(starship init zsh)"
-
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # antigen bundle osx
 
@@ -40,6 +36,8 @@ else
 fi
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
+
+setopt inc_append_history
 
 # Set GUI editor
 export GUI_EDITOR="IntelliJ\ IDEA\ Ultimate"
@@ -98,4 +96,4 @@ for file in ~/dotfiles/zsh/conf.d/*.inc.zsh; do
   source "$file"
 done
 
-
+eval "$(starship init zsh)"
