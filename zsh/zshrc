@@ -38,6 +38,13 @@ export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
 setopt inc_append_history
+setopt hist_ignore_all_dups
+
+# Ensures that glob failures don't cause the
+# command to be aborted, meaning that the
+# caret (^) works as expected 
+# https://stackoverflow.com/questions/6091827/git-show-head-doesnt-seem-to-be-working-is-this-normal
+setopt NO_NOMATCH 
 
 # Set GUI editor
 export GUI_EDITOR="IntelliJ\ IDEA\ Ultimate"
