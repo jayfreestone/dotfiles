@@ -32,3 +32,5 @@
 	tool = Kaleidoscope
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
+[alias]
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
