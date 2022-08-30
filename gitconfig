@@ -1,11 +1,14 @@
 [core]
     excludesfile = ~/.gitignore_global
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta
 	autocrlf = input
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    file-modified-label = delta
 [color]
     ui = auto
-[pager]
-    diff = diff-so-fancy | less --tabs=4 -RFXS --pattern '^(Date|added|deleted|modified): '
 [rerere]
     enabled = true
 [rebase]
@@ -17,8 +20,9 @@
 [merge]
     ff = only
 	tool = Kaleidoscope
+    conflictstyle = diff3
 [include]
-  path = ~/.gitconfig.local
+    path = ~/.gitconfig.local
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
@@ -35,3 +39,5 @@
 [alias]
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 	pr-with-commit = !~/dotfiles/zsh/scripts/hub-pr-with-commit.sh
+	diff-patch = !~/dotfiles/zsh/scripts/diff-patch.sh
+	dc = commit -m \"wip\"

@@ -39,4 +39,4 @@ hub api graphql -f q="${COMMIT} type:pr repo:${PROJECT}" "$@" -f query='
       }
     }
   }
-' | jq -r '.data.search.nodes[] | "\(.url) - \(.title)"'
+' | jq -r '.data.search.nodes[] | [.title, .url] | @tsv'
