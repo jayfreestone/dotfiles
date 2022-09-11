@@ -1,0 +1,8 @@
+.idea
+.gitignore
+.git
+Brewfile
+zsh
+.DS_Store
+.stow-local-ignore
+README.*

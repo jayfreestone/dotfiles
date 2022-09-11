@@ -3,8 +3,6 @@ setopt null_glob
 source /Users/jfree/antigen.zsh
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  # antigen bundle osx
-
   # Required for z to work
   source `brew --prefix`/etc/profile.d/z.sh
 fi
@@ -43,9 +41,9 @@ setopt hist_ignore_all_dups
 
 # Ensures that glob failures don't cause the
 # command to be aborted, meaning that the
-# caret (^) works as expected 
+# caret (^) works as expected
 # https://stackoverflow.com/questions/6091827/git-show-head-doesnt-seem-to-be-working-is-this-normal
-setopt NO_NOMATCH 
+setopt NO_NOMATCH
 
 # Set GUI editor
 export GUI_EDITOR="IntelliJ\ IDEA\ Ultimate"
