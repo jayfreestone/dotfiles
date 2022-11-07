@@ -10,6 +10,5 @@ alias mostcommits='git shortlog -sn --all --no-merges'
 
 # Docker
 alias dc='docker-compose'
-compdef dc='docker-compose'
 
 alias grc='git add --all && git commit -m "wip" && git push'

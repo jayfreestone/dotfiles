@@ -1,38 +1,28 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 setopt null_glob
 
-source /Users/jfree/antigen.zsh
+fpath=(~/dotfiles/zsh/completion $fpath)
+
+# source antidote
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+
+# initialize plugins statically
+antidote load
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   # Required for z to work
   source `brew --prefix`/etc/profile.d/z.sh
 fi
 
-antigen bundle Aloxaf/fzf-tab
-antigen bundle git
-antigen bundle yarn
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle gitfast
-antigen bundle Seinh/git-prune
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-completions
+autoload -Uz compinit && compinit -i
 
-# Tell Antigen that you're done.
-antigen apply
-
-autoload -U compinit compdef
-compinit
-
-# prefer nvim as $EDITOR
-if which nvim > /dev/null; then
-  export EDITOR=nvim
-  alias vi=nvim
-  alias vim=nvim
-else
-  export EDITOR=vim
-  alias nvim=vim
-fi
+export EDITOR=vim
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
@@ -85,10 +75,6 @@ if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
 
-# Enable docker completion for commands such as docker exec -it
-zstyle ':completion:*:*:docker:*' option-stacking yes
-zstyle ':completion:*:*:docker-*:*' option-stacking yes
-
 # Load aliases
 source ~/dotfiles/zsh/aliases.inc.zsh;
 
@@ -102,4 +88,5 @@ for file in ~/dotfiles/zsh/conf.d/*.inc.zsh; do
   source "$file"
 done
 
-eval "$(starship init zsh)"
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

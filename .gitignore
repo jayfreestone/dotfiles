@@ -1,2 +1,4 @@
 zsh/conf.d/*
 !zsh/conf.d/.gitkeep
+zsh/completion/*
+!zsh/completion/.gitkeep
