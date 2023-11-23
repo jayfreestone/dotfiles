@@ -1,5 +1,5 @@
 # Generic
-alias ls='ls -Glah'
+#alias ls='ls -Glah'
 alias mkdir='mkdir -pv'
 
 # Git

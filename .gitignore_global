@@ -3,4 +3,8 @@
 .DS_Store
 tags
 .idea/
+.vscode
 flow-typed/
+*-distribution.json
+cdk.context.json
+playwright-report/
