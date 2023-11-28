@@ -18,7 +18,7 @@
 [pull]
     ff = only
 [merge]
-    ff = only
+#    ff = only
 	tool = Kaleidoscope
     conflictstyle = diff3
 [include]

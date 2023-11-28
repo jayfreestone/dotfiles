@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/themes/github_dark_dimmed.yml
+  - ~/.config/alacritty/themes/monokai_pro.yaml
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
@@ -122,8 +122,7 @@ window:
 
 font:
   normal:
-    family: MonaspiceAr NF
-#    family: Hack Nerd Font Mono
+    family: Hack Nerd Font Mono
 #    family: InputMono Nerd Font
 # Font configuration
 #font:

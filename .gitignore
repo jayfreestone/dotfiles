@@ -2,3 +2,11 @@ zsh/conf.d/*
 !zsh/conf.d/.gitkeep
 zsh/completion/*
 !zsh/completion/.gitkeep
+
+.config/configstore
+.config/flipperdevices.com
+.config/github-copilot
+.config/karabiner
+.config/mpv
+.config/raycast
+.config/simple-update-notifier
