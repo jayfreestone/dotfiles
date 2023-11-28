@@ -1,9 +1,5 @@
 import:
   - ~/.config/alacritty/themes/github_dark_dimmed.yml
-#  - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
-#   - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
-#   - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
-#  - ~/.config/alacritty/themes/monokai_pro.yaml
 
 # Configuration for Alacritty, the GPU enhanced terminal emulator.
 
@@ -126,7 +122,8 @@ window:
 
 font:
   normal:
-    family: Hack Nerd Font Mono
+    family: MonaspiceAr NF
+#    family: Hack Nerd Font Mono
 #    family: InputMono Nerd Font
 # Font configuration
 #font:

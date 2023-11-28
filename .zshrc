@@ -1,3 +1,4 @@
+# https://github.com/romkatv/powerlevel10k#how-do-i-initialize-direnv-when-using-instant-prompt
 (( ${+commands[direnv]} )) && emulate zsh -c "$(direnv export zsh)"
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -7,23 +8,26 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Both this and the line above are required.
+# https://github.com/romkatv/powerlevel10k#how-do-i-initialize-direnv-when-using-instant-prompt
 (( ${+commands[direnv]} )) && emulate zsh -c "$(direnv hook zsh)"
 
 setopt null_glob
 
 fpath=(~/dotfiles/zsh/completion $fpath)
 
-# source antidote
+# Source antidote
 source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
-# initialize plugins statically
+# Initialize plugins statically
 antidote load
 
+# Required for z to work
 if [[ "$OSTYPE" == "darwin"* ]]; then
-  # Required for z to work
   source `brew --prefix`/etc/profile.d/z.sh
 fi
 
+autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -i
 
 export EDITOR=vim
@@ -69,11 +73,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# ruby (rvm)
-if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
-fi
-
 # Load aliases
 source ~/dotfiles/zsh/aliases.inc.zsh;
 
@@ -90,16 +89,3 @@ done
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# pnpm
-export PNPM_HOME="/Users/jfree/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
-
-complete -C '/usr/local/bin/aws_completer' aws
-
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-#export AWS_CLI_AUTO_PROMPT=on
