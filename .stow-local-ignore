@@ -6,3 +6,11 @@ zsh
 .DS_Store
 .stow-local-ignore
 README.*
+
+.config/configstore
+.config/flipperdevices.com
+.config/github-copilot
+.config/karabiner
+.config/mpv
+.config/raycast
+.config/simple-update-notifier
