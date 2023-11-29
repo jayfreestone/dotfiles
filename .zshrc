@@ -46,14 +46,6 @@ setopt NO_NOMATCH
 # Set GUI editor
 export GUI_EDITOR="IntelliJ\ IDEA\ Ultimate"
 
-# Vi mode
-bindkey -v '^?' backward-delete-char
-# https://superuser.com/questions/476532/how-can-i-make-zshs-vi-mode-behave-more-like-bashs-vi-mode
-# bindkey -mv
-# 10ms for key sequences
-# https://www.johnhawthorn.com/2012/09/vi-escape-delays/
-KEYTIMEOUT=1
-
 # fzf setup
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

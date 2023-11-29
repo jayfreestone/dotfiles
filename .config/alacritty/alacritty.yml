@@ -398,32 +398,15 @@ font:
 #save_to_clipboard: false
 
 #cursor:
-# Cursor style
-#style:
-# Cursor shape
-#
-# Values for `shape`:
-#   - ▇ Block
-#   - _ Underline
-#   - | Beam
-#shape: Block
+#  style:
+#    shape: Underline
+#  vi_mode_style:
+#    shape: Block
 
-# Cursor blinking state
-#
-# Values for `blinking`:
-#   - Never: Prevent the cursor from ever blinking
-#   - Off: Disable blinking by default
-#   - On: Enable blinking by default
-#   - Always: Force the cursor to always blink
-#blinking: Off
-
-# Vi mode cursor style
-#
-# If the vi mode cursor style is `None` or not specified, it will fall back to
-# the style of the active value of the normal cursor.
-#
-# See `cursor.style` for available options.
-#vi_mode_style: None
+#colors:
+#  vi_mode_cursor:
+#    text: CellBackground
+#    cursor: CellForeground
 
 # Cursor blinking interval in milliseconds.
 #blink_interval: 750

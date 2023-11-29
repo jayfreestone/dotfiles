@@ -5,3 +5,4 @@ ohmyzsh/ohmyzsh path:plugins/gitfast
 Aloxaf/fzf-tab
 romkatv/powerlevel10k
 zsh-users/zsh-syntax-highlighting
+jeffreytse/zsh-vi-mode
