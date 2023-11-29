@@ -34,6 +34,12 @@ export EDITOR=vim
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 
+# Customise zsh vim cursor
+# https://github.com/jeffreytse/zsh-vi-mode#custom-cursor-style
+export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+export ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLOCK
+export ZVM_OPPEND_MODE_CURSOR=$ZVM_CURSOR_UNDERLINE
+
 setopt inc_append_history
 setopt hist_ignore_all_dups
 
@@ -60,10 +66,6 @@ if [ -f ~/.fzf.zsh ]; then
   # MacOS doesn't use Alt in terminal, so re-bind
   bindkey '\C-o' fzf-cd-widget
 fi
-
-# node (nvm)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # Load aliases
 source ~/dotfiles/zsh/aliases.inc.zsh;
