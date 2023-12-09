@@ -40,9 +40,3 @@
 	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 	pr-with-commit = !~/dotfiles/zsh/scripts/hub-pr-with-commit.sh
 	diff-patch = !~/dotfiles/zsh/scripts/diff-patch.sh
-	dc = commit -m \"wip\"
-    ia = !git add $(git ls-files --modified --others --exclude-standard | fzf -m)
-    addm = "!git ls-files --deleted --modified --other --exclude-standard | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r git add"
-    resetm = "!git diff --name-only --cached | fzf -0 -m --preview 'git diff --color=always {-1}' | xargs -r git reset"
-
-

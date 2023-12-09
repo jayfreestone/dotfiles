@@ -10,3 +10,4 @@ zsh/completion/*
 .config/mpv
 .config/raycast
 .config/simple-update-notifier
+.config/jgit

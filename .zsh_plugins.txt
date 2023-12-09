@@ -1,8 +1,8 @@
 zsh-users/zsh-completions
 belak/zsh-utils path:completion
-ohmyzsh/ohmyzsh path:plugins/git
-ohmyzsh/ohmyzsh path:plugins/gitfast
 Aloxaf/fzf-tab
 romkatv/powerlevel10k
 zsh-users/zsh-syntax-highlighting
 jeffreytse/zsh-vi-mode
+ohmyzsh/ohmyzsh path:plugins/git
+wfxr/forgit
