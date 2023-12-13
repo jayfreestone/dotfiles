@@ -13,8 +13,12 @@
     enabled = true
 [rebase]
     autosquash = true
+    # https://andrewlock.net/working-with-stacked-branches-in-git-is-easier-with-update-refs/
+    updateRefs = true
 [fetch]
     prune = true
+[push]
+    autoSetupRemote = true
 [pull]
     ff = only
 [merge]
