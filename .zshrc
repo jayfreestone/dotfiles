@@ -70,16 +70,6 @@ if [ -f ~/.fzf.zsh ]; then
   bindkey '\C-o' fzf-cd-widget
 fi
 
-# Forgit config
-# https://github.com/wfxr/forgit
-export FORGIT_FZF_DEFAULT_OPTS="
---exact
---border
---cycle
---reverse
---height '80%'
-"
-
 # Load aliases
 source ~/dotfiles/zsh/aliases.inc.zsh;
 
