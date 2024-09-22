@@ -4,7 +4,10 @@
 tags
 .idea/
 .vscode
+.zed
 flow-typed/
 *-distribution.json
 cdk.context.json
 playwright-report/
+.env.jf
+.env-dev-local

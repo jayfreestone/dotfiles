@@ -1,9 +1,7 @@
 # Remove existing alias first to avoid PL10k warnings.
-#unalias gco;
-#
-#gco() {
-#  _fzf_git_each_ref --no-multi | xargs git checkout
-#}
+gcob() {
+  _fzf_git_each_ref --no-multi | xargs git checkout
+}
 
 gswt() {
   cd "$(_fzf_git_worktrees --no-multi)"

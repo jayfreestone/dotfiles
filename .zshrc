@@ -25,11 +25,6 @@ source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 # Initialize plugins statically
 antidote load
 
-# Required for z to work
-if [[ "$OSTYPE" == "darwin"* ]]; then
-  source `brew --prefix`/etc/profile.d/z.sh
-fi
-
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit -i
 
@@ -82,6 +77,8 @@ done
 for file in ~/dotfiles/zsh/conf.d/*.inc.zsh; do
   source "$file"
 done
+
+eval "$(zoxide init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

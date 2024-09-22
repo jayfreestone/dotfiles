@@ -1,6 +1,6 @@
 brew "antidote" # ZSH plugin manager
 brew "zsh"
-brew "z"
+brew "zoxide"
 brew "vim"
 brew "tmux"
 brew "jq"
