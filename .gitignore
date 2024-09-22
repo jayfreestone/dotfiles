@@ -11,3 +11,6 @@ zsh/completion/*
 .config/raycast
 .config/simple-update-notifier
 .config/jgit
+.config/zed/conversations
+.config/zed/embeddings
+.config/zed/prompts
