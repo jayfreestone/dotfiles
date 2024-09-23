@@ -7,17 +7,28 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "format_on_save": "off",
+  "assistant": {
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-4o"
+    },
+    "version": "2"
+  },
+  "format_on_save": "on",
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
   "vim_mode": true,
   "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "buffer_font_size": 13,
+  "buffer_font_family": "MonaspiceAr Nerd Font",
+  "terminal": {
+    "font_size": 13
+  },
   "theme": {
     "mode": "system",
-    "light": "One Light",
+    "light": "KTRZ Monokai",
     "dark": "One Dark"
   }
 }
