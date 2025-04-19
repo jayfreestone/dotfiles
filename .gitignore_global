@@ -11,3 +11,4 @@ cdk.context.json
 playwright-report/
 .env.jf
 .env-dev-local
+.cursor

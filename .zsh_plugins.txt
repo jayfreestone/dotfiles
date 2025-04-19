@@ -1,7 +1,0 @@
-zsh-users/zsh-completions
-belak/zsh-utils path:completion
-Aloxaf/fzf-tab
-romkatv/powerlevel10k
-zsh-users/zsh-syntax-highlighting
-jeffreytse/zsh-vi-mode
-ohmyzsh/ohmyzsh path:plugins/git

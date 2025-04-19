@@ -3,6 +3,10 @@ zsh/conf.d/*
 zsh/completion/*
 !zsh/completion/.gitkeep
 
+.config/fish/fish_variables
+.config/fish/conf.d/*
+!.config/fish/conf.d/atuin.env.fish
+
 .config/configstore
 .config/flipperdevices.com
 .config/github-copilot
