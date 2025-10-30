@@ -1,4 +1,4 @@
-theme = 0x96f
+theme = Monokai Pro Ristretto
 font-family = "JetBrainsMonoNL NFP"
 font-size = 11
 window-padding-balance = true
@@ -8,3 +8,21 @@ cursor-style = block
 cursor-style-blink = false
 shell-integration-features = no-cursor
 shell-integration = fish
+desktop-notifications = true
+
+scrollback-limit = 1000000
+keybind = super+r=reload_config
+
+# Faux tmux
+window-save-state = always
+keybind = ctrl+n=new_window
+keybind = ctrl+h=goto_split:left
+keybind = ctrl+j=goto_split:bottom
+keybind = ctrl+k=goto_split:top
+keybind = ctrl+l=goto_split:right
+keybind = ctrl+a>shift+'=new_split:down
+keybind = ctrl+a>shift+5=new_split:right
+keybind = ctrl+a>x=close_surface
+keybind = ctrl+a>f=toggle_split_zoom
+keybind = ctrl+a>n=next_tab
+keybind = ctrl+a>p=previous_tab
